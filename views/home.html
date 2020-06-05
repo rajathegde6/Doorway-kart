@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!-- BOOTSTRAP CDN -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+    .nav-item
+    {
+      padding-left:40px;
+    }
+
+    .typeahead
+    {
+      border-radius:20px;margin-left:20px;width:30%;
+    }
+    .searchbut{
+      margin-left: 20px;
+       color:white;
+      background-color: transparent;
+      border:none;
+
+    }
+
+    .navbar input[type="text"]::placeholder
+    {
+      text-align: center;
+      color:black;
+    }
+    .container {
+      height:auto;
+      width:auto;
+      position: relative;
+
+    }
+
+    .image {
+      padding-top:16px;
+      padding-bottom:16px;
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: 300px;
+      transition: .5s ease;
+      backface-visibility: hidden;
+
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .container:hover .image {
+      opacity: 0.3;
+    }
+
+    .container:hover .middle {
+      opacity: 1;
+    }
+
+    .text {
+      background-color: #4CAF50;
+      border-radius:30px;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+
+
+    .dropbtn {
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown {
+
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #343a40;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 20px;
+
+    }
+
+    .dropdown-content a {
+       color:white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+
+    /* Full-width input fields */
+    .modal input[type=text], input[type=password] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    .modal button {
+     background-color: #4CAF50;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+    }
+
+    .modal button:hover {
+     opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .container .cancelbtn {
+     width: auto;
+     padding: 10px 18px;
+     background-color: #f44336;
+    }
+    #id02 .cancelbtn {
+     width: 100%;
+     padding: 10px 18px;
+     background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+     text-align: center;
+     margin: 24px 0 12px 0;
+     position: relative;
+    }
+
+    img.avatar {
+     width: 40%;
+     border-radius: 50%;
+    }
+
+    .modal .container {
+     padding: 16px;
+    }
+
+    span.psw {
+
+     padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+     display: none; /* Hidden by default */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     left: 0;
+     top: 0;
+     width: 100%; /* Full width */
+     height:100%; /* Full height */
+     overflow: auto; /* Enable scroll if needed */
+     background-color: rgb(0,0,0); /* Fallback color */
+     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+     padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+     background-color: #fefefe;
+     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+     border: 1px solid #888;
+     width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+     position: absolute;
+     right: 25px;
+     top: 0;
+     color: #000;
+     font-size: 35px;
+     font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+     color: red;
+     cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+     -webkit-animation: animatezoom 0.6s;
+     animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+     from {-webkit-transform: scale(0)}
+     to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+     from {transform: scale(0)}
+     to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+     span.psw {
+        display: block;
+        float: none;
+     }
+    .cancelbtn {
+        width: 100%;
+     }
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .fas{
+      margin-left: 3px;
+    }
+    .far{
+      margin-left: 3px;
+    }
+
+    </style>
+  </head>
+<body>
+
+  <nav  style="padding-left:16px;" class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" style="font-family: 'Pacifico', cursive;" href="#">Doorway <i class="fas fa-shopping-cart"></a></i>
+
+
+    <input class="typeahead tt-query" spellcheck="false" autocomplete="on" name="typeahead"placeholder="search for products" type="text" />
+  <a href="/search"><button class="searchbut" type="submit"><i class="fa fa-search"></i></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div  class="collapse navbar-collapse"  id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <center><a class="nav-link" href="/">Home <i class="fas fa-store"></i></a></center>
+        </li>
+        <li class="nav-item">
+        <center>  <a class="nav-link" href="#">Cart <i class="fas fa-shopping-bag"></i></a></center>
+        </li>
+
+
+        <li class="nav-item" >
+        <center>  <div class="dropdown">
+          <center><a class="nav-link dropbtn" href="#">My Account<i class="far fa-user-circle"></i></a>
+            <div class="dropdown-content">
+    <a href="#">Orders</a>
+    <a href="#">Profile</a>
+    <a href="/logout">Log out</a>
+
+  </div></div></center>
+        </li>
+
+      </ul>
+    </div>
+
+  </nav>
+    <h6 class="bg-warning"><center><br>welcome <%= sess.email%></center><br></h6>
+
+    <div class="container p-4">
+        <div class="card">
+
+
+
+
+  <center><a href="/shop">  <button id="getServers" class="bg-warning" >Shop Products</button></a></center>
+
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+    </div>
+
+
+            </div>
+
+        <div class="container-fluid">
+
+          <div class="row">
+            <div class="col-lg-4" style="background-color:black;">
+
+              <div class="container">
+                <img src="../images/pexels-photo-761963.jpeg" alt="Avatar" class="image" style="width:100%">
+                <center><h1 style="color:rgba(255,255,255,.5);">Fashion</h1></center>
+
+                <div class="middle">
+                <a href="/fashionproducts"><button class="text">checkout products</button></a>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-lg-4" style="background-color:black;">
+
+              <div class="container">
+          <img src="../images/pexels-photo-298863.jpeg" alt="Avatar" class="image" >
+          <center><h1 style="color:rgba(255,255,255,.5);">Upto 70% off* </h1></center>
+          <div class="middle">
+            <button class="text">checkout products</button>
+          </div>
+        </div>
+            </div>
+            <div class="col-lg-4" style="background-color:BLACK;">
+
+              <div class="container">
+                <img src="/images/pexels-photo-1037992.jpeg" alt="Avatar" class="image" style="width:100%">
+                <center><h1 style="color:rgba(255,255,255,.5);">Electronics</h1></center>
+
+                <div class="middle">
+                <a href="/electronicsproduct">  <button class="text">checkout products</button></a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+</body>
+
+</html>

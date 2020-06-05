@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!-- BOOTSTRAP CDN -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script  src='/javascripts/app.js'></script>
+    <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+
+    .card button {
+      margin-top: 10px;
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .card button:hover {
+      opacity: 0.7;
+    }
+    .card select
+    {
+      background-color: black;
+color: white;
+    }
+    </style>
+  </head>
+
+<body>
+<h2 style="text-align:center" class="bg-warning text-white"><%=ele%> Products found</h2>
+
+<div class="card">
+    <img src="/images/nike1.jpg" alt="Denim Jeans" style="width:100%">
+    <h1 id="h"> <%=data[0].productname%></h1>
+    <p id="p"class="price">$ <%=data[0].price%></p>
+    <p id="d"> <%=data[0].details%></p>
+    <label for="sizes"> size</label>
+    <center><select id="sizes">
+  <option value="6">6</option>
+        <option value="7">7</option>
+          <option value="8">8</option>
+            <option value="9">9</option>
+    </select></center>
+    <p><button>Add to Cart</button></p>
+  </div>
+  <div class="card">
+      <img src="/images/nike1.jpg" alt="Denim Jeans" style="width:100%">
+      <h1 id="h"> <%=data[1].productname%></h1>
+      <p id="p"class="price">$ <%=data[1].price%></p>
+      <p id="d"> <%=data[1].details%></p>
+      <label for="sizes"> size</label>
+      <center><select id="sizes">
+    <option value="6">6</option>
+          <option value="7">7</option>
+            <option value="8">8</option>
+              <option value="9">9</option>
+      </select></center>
+      <p><button>Add to Cart</button></p>
+    </div>
+
+    <div class="card">
+        <img src="/images/nike1.jpg" alt="Denim Jeans" style="width:100%">
+        <h1 id="h"> <%=data[2].productname%></h1>
+        <p id="p"class="price">$ <%=data[2].price%></p>
+        <p id="d"> <%=data[2].details%></p>
+        <label for="sizes"> size</label>
+        <center><select id="sizes">
+      <option value="6">6</option>
+            <option value="7">7</option>
+              <option value="8">8</option>
+                <option value="9">9</option>
+        </select></center>
+        <p><button>Add to Cart</button></p>
+      </div>
+      <div class="card">
+          <img src="/images/nike1.jpg" alt="Denim Jeans" style="width:100%">
+          <h1 id="h"> <%=data[3].productname%></h1>
+          <p id="p"class="price">$ <%=data[3].price%></p>
+          <p id="d"> <%=data[3].details%></p>
+          <label for="sizes"> size</label>
+          <center><select id="sizes">
+        <option value="6">6</option>
+              <option value="7">7</option>
+                <option value="8">8</option>
+                  <option value="9">9</option>
+          </select></center>
+          <p><button>Add to Cart</button></p>
+        </div>
+</body>
+
+</html>

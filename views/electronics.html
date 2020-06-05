@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <!-- BOOTSTRAP CDN -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script  src='/javascripts/electronicsproduct.js' async></script>
+
+    <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .price {
+      color: grey;
+      font-size: 22px;
+    }
+
+    .card button {
+      margin-top: 10px;
+      border: none;
+      outline: 0;
+      padding: 12px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    .card button:hover {
+      opacity: 0.7;
+    }
+    .card select
+    {
+      background-color: black;
+color: white;
+    }
+
+    .nav-item
+    {
+      padding-left:40px;
+    }
+
+    .typeahead
+    {
+      border-radius:20px;margin-left:20px;width:30%;
+    }
+    .searchbut{
+      margin-left: 20px;
+       color:white;
+      background-color: transparent;
+      border:none;
+
+    }
+
+    .navbar input[type="text"]::placeholder
+    {
+      text-align: center;
+      color:black;
+    }
+    .container {
+      height:auto;
+      width:auto;
+      position: relative;
+
+    }
+
+    .image {
+      padding-top:16px;
+      padding-bottom:16px;
+      opacity: 1;
+      display: block;
+      width: 100%;
+      height: 300px;
+      transition: .5s ease;
+      backface-visibility: hidden;
+
+    }
+
+    .middle {
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .container:hover .image {
+      opacity: 0.3;
+    }
+
+    .container:hover .middle {
+      opacity: 1;
+    }
+
+    .text {
+      background-color: #4CAF50;
+      border-radius:30px;
+      color: white;
+      font-size: 16px;
+      padding: 16px 32px;
+    }
+
+
+    .dropbtn {
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropdown {
+
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #343a40;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 20px;
+
+    }
+
+    .dropdown-content a {
+       color:white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+
+    /* Full-width input fields */
+    .modal input[type=text], input[type=password] {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     box-sizing: border-box;
+    }
+
+    /* Set a style for all buttons */
+    .modal button {
+     background-color: #4CAF50;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     cursor: pointer;
+     width: 100%;
+    }
+
+    .modal button:hover {
+     opacity: 0.8;
+    }
+
+    /* Extra styles for the cancel button */
+    .container .cancelbtn {
+     width: auto;
+     padding: 10px 18px;
+     background-color: #f44336;
+    }
+    #id02 .cancelbtn {
+     width: 100%;
+     padding: 10px 18px;
+     background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+     text-align: center;
+     margin: 24px 0 12px 0;
+     position: relative;
+    }
+
+    img.avatar {
+     width: 40%;
+     border-radius: 50%;
+    }
+
+    .modal .container {
+     padding: 16px;
+    }
+
+    .modal span.psw {
+
+     padding-top: 16px;
+    }
+
+    /* The Modal (background) */
+    .modal {
+      font-family: sans-serif;
+     display: none; /* Hidden by default */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     left: 0;
+     top: 0;
+     width: 100%; /* Full width */
+     height:100%; /* Full height */
+     overflow: auto; /* Enable scroll if needed */
+     background-color: rgb(0,0,0); /* Fallback color */
+     background-color: white; /* Black w/ opacity */
+     padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+     background-color: #fefefe;
+     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+     border: 1px solid #888;
+     width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+     position: absolute;
+     right: 25px;
+     top: 0;
+     color: #000;
+     font-size: 35px;
+     font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+     color: red;
+     cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+     -webkit-animation: animatezoom 0.6s;
+     animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+     from {-webkit-transform: scale(0)}
+     to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+     from {transform: scale(0)}
+     to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+     .checkout span.psw {
+        display: block;
+        float: none;
+     }
+    .cancelbtn {
+        width: 100%;
+     }
+    }
+
+.checkout{
+  max-width:1300px;
+}
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    .fas{
+      margin-left: 3px;
+    }
+    .far{
+      margin-left: 3px;
+    }
+  .cart
+    {
+      color:white;
+      font-family:'Anton', sans-serif;
+      background-color: black;
+    }
+  .checkout  .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+      margin: 0 -16px;
+    }
+
+  .col-25 {
+      -ms-flex: 20%; /* IE10 */
+      flex: 20%;
+    }
+
+  .checkout  .col-50 {
+      -ms-flex: 50%; /* IE10 */
+      flex: 50%;
+    }
+
+  .checkout  .col-75 {
+      -ms-flex: 75%; /* IE10 */
+      flex: 70%;
+    }
+
+  .checkout
+    .col-50,
+    .col-75 {
+      padding: 0 10px;
+    }
+
+    .checkout .container {
+      background-color: #f2f2f2;
+      padding: 5px 5px 5px 10px;
+      border: 1px solid lightgrey;
+      border-radius: 3px;
+    }
+    .col-25 .container {
+      background-color: #f2f2f2;
+      padding: 5px 5px 5px 10px;
+      border: 1px solid lightgrey;
+      border-radius: 3px;
+      max-width:200px;
+    }
+  .checkout  input[type=text] {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+      .checkout label {
+      margin-bottom: 10px;
+      display: block;
+    }
+
+      .chekout .icon-container {
+      margin-bottom: 20px;
+      padding: 7px 0;
+      font-size: 24px;
+    }
+
+      .chekout .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      width: 100%;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+  .chekout  a {
+      color: #2196F3;
+    }
+
+  .checkout  hr {
+      border: 1px solid lightgrey;
+    }
+
+  .checkout  span.price {
+      float: right;
+      color: grey;
+      padding-right: 2px;
+    }
+
+.cart-price,.cart-quantity
+{
+  margin-top:20px;
+}
+.cart-item-image{
+  margin-top:-10px;
+}
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+    @media (max-width: 800px) {
+      .checkout {
+        flex-direction: column-reverse;
+      }
+      .col-25 {
+        margin-bottom: 20px;
+      }
+    }
+
+
+
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(1,1);
+
+    }
+    50% {
+        transform: scale(1.2,1.2);
+ transform: translateY(20px); opacity: 0;
+   }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+@keyframes turn {
+    0% {
+        transform: scale(1,1);
+
+    }
+    50% {
+        transform: scale(1.2,1.2);
+ transform: rotate(100deg) translateY(0); opacity: 1; transform-origin: top right; animation-timing-function: ease-in;
+   }
+    100% {
+        transform: scale(1,1);
+    }
+}
+
+
+ .card {
+
+  animation-duration: 5s;
+  animation-name: zoominoutsinglefeatured;
+  animation-delay: -1s;
+
+}
+.image{
+  animation-duration: 2s;
+  animation-name: turn;
+  animation-delay: -1.5s;
+
+}
+.btn-warning:hover .fab{
+  transform: scale(1.5);
+  animation: shake 0.5s;
+
+/* When the animation is finished, start again */
+animation-iteration-count: infinite;
+}
+@keyframes shake {
+0% { transform: translate(1px, 1px) rotate(0deg); }
+10% { transform: translate(-1px, -2px) rotate(-1deg); }
+20% { transform: translate(-3px, 0px) rotate(1deg); }
+30% { transform: translate(3px, 2px) rotate(0deg); }
+40% { transform: translate(1px, -1px) rotate(1deg); }
+50% { transform: translate(-1px, 2px) rotate(-1deg); }
+60% { transform: translate(-3px, 1px) rotate(0deg); }
+70% { transform: translate(3px, 1px) rotate(-1deg); }
+80% { transform: translate(-1px, -1px) rotate(1deg); }
+90% { transform: translate(1px, 2px) rotate(0deg); }
+100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+    </style>
+  </head>
+
+<body>
+  <nav style="padding-left:16px;" class="navbar navbar-expand-md bg-dark navbar-dark">
+    <a class="navbar-brand" style="font-family: 'Pacifico', cursive;" href="#">Doorway <i class="fas fa-shopping-cart"></a></i>
+
+
+    <input class="typeahead tt-query" spellcheck="false" autocomplete="on" name="typeahead"placeholder="search for products" type="text" />
+  <a href="/search"><button class="searchbut" type="submit"><i class="fa fa-search"></i></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div  class="collapse navbar-collapse"  id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <center><a class="nav-link" href="/">Home <i class="fas fa-store"></i></a></center>
+        </li>
+        <li class="nav-item" >
+          <center><a class="nav-link dropbtn" onclick="document.getElementById('id01').style.display='block'" href="#">Cart<i class="far fa-user-circle"></i></a>
+
+        </li>
+
+
+        <li class="nav-item " >
+        <center>  <div class="dropdown">
+          <center><a class="nav-link dropbtn" href="#">My Account<i class="far fa-user-circle"></i></a>
+            <div class="dropdown-content">
+    <a href="#">Orders</a>
+    <a href="#">Profile</a>
+    <a href="/logout">Log out</a>
+
+  </div></div></center>
+        </li>
+
+      </ul>
+    </div>
+
+  </nav>
+<h2 style="text-align:center" class=" bg-warning text-white"><%=ele%> Products found </h2>
+<div class="product-list">
+<div class="card">
+    <img class="image" src="/images/<%=data[0].productname%>.jpg" alt="Sony " style="width:100%">
+    <h1 id="h" class="name" name="name">  <%=data[0].productname%> </h1>
+    <p id="p"class="price" name="price">   <%=data[0].price%></p>
+    <p id="d">  <%=data[0].details%> </p>
+    <label for="sizes" >Screen Size</label>
+    <center><select id="sizes"class="size" name="size">
+  <option value="24">24</option>
+        <option value="30">30</option>
+          <option value="40">40</option>
+            <option value="50">50</option>
+    </select></center>
+    <p><button class="shop-item-button" type="button">Add to Cart</button></p>
+  </div>
+</div>
+
+
+
+<div id="id01" class="modal">
+  <div class="imgcontainer">
+    <span style="color:red;margin-top:10px;margin-right:50px;"onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  </div>
+
+  <div class="cart">
+  <center><h1 style="font-family: 'Crimson Text', serif;">Cart</h1></center>
+
+  <div class="cart-items container" >
+
+
+  </div>
+
+  <div class="cart-total">
+
+  <center>  <strong class="cart-total-title">Total</strong>
+
+    <span class="cart-total-price" style="text-align:right;" type="number" >$0</span></center>
+    <br>  <br>  <br>
+    <center><button class="btn btn-warning" style="width:200px;color:black;" onclick="document.getElementById('id02').style.display='block';document.getElementById('id01').style.display='none'" >Buy</button></center>
+  </div>
+
+  </div>
+</div>
+
+<div id="id02" class="modal" >
+  <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <div class="checkout row">
+  <div class="col-75">
+    <div style="margin-left:10px;"class="container">
+      <form  action="./pay" method="post">
+
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class=" row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <button type="submit" value="submit" style="color:white"class=" btn-warning"> <i style="font-size:35px;color:blue;" class="fab fa-paypal"></i>pay using paypal</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-25">
+  <div class="col-50">
+    <label for="zip">cart</label><i class="fa fa-shopping-cart"></i>
+    <span type="number" class="quan" name="quan" style="color:black">0</span>
+
+  </div>
+  <div class="col-50">
+    <label for="zip">cart total</label>
+    <span type="number" class="checkout-price" name="checkoutprice" style="color:black">0</span>
+
+  </div>
+</div>
+</div>
+</div>
+<script>
+
+
+</script>
+</body>
+
+</html>

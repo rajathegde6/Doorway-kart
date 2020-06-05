@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+  <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<header>
+
+	</header>
+	<div class="panel panel-primary">
+		<a href="/logoutadmin">
+		<button class="btn-success btn pull-right">
+				Logout
+			</button>
+		</a>
+	</div>
+	<!-- if you want to create login page and register page together in one page ...you have to only chnage his name...that's it...                 -->
+	<div class="container font" style="margin-top: 1%;">
+	  <div class="row">
+			<div class="col-md-5 cal-md-offset-2">
+			<h1 class="text-center text-success font"><strong>Shop registeration page</strong></h1>
+			  <div class="tab-content">
+			    <div id="home" class="tab-pane fade in active">
+
+
+
+					<form action="/controllers/reg_shop" method="post" >
+
+
+
+						<div class="form-group font">
+					    <label for="shopname" class="font">shop name</label>
+					    <input type="text" class="form-control font" id="shopname" name="shopname">
+					  </div>
+
+
+					  <div class="form-group">
+					    <label for="catagory" class="font">Catagory:</label>
+					    <input type="text" class="form-control font" id="catagory" name="catagory">
+					  </div>
+
+
+
+					  <div class="form-group">
+					    <label for="details" class="font"> Shop Details:</label>
+					    <textarea class="form-control font" id="details" name="details"></textarea>
+					  </div>
+
+					  <!-- <input type="submit" class="btn btn-primary btn-lg font" value="Submit"> -->
+					  <button type="submit" value="submit"class="btn btn-primary btn-lg font" id="submit">Register as partnerered shop</button>
+					</form>
+			    </div>
+			    </div>
+			   </div>
+	  		</div>
+		</div>
+	<hr>
+	<footer class="bg-dark text-white">
+
+	</footer>
+</body>
+</html>
