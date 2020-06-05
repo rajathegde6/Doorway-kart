@@ -169,7 +169,7 @@ console.log(rows);
 paypal.configure({
   'mode': 'sandbox', //sandbox or live
   'client_id': 'AYval0vYoYahmzdUquCnU95-V3I3LkOqLScr8PlhnDmyWnQpad0CUnCvdoslASPlr3zNHqvhRN5LsYbm',
-  'client_secret': 'EI8y4RlObZnk5RcAOFLCcHsr0uFzyIFPO7SoL4_ROX0EMDuUmL-7CeaQ1xpr_J_wnVTALMmcQfcbMyMm'
+  'client_secret': ''
 });
 
 app.post('/pay', (req,res) =>
