@@ -23,7 +23,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "paypal-rest-sdk": "^1.8.1",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
